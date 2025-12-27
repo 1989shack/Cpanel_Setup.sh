@@ -1,0 +1,13 @@
+name: Deploy Cpanel Server
+on:
+   workflow_dispatch:
+   jobs:
+   setup-cpanel:
+   runs-on: ubuntu-latest
+   steps:
+   -name: checkout repo
+   uses: actions/checkout@v3
+   -name: Run cpanel setup scr
+   run: |
+   chmod +x cpanel_setup.sh
+   ./cpanel_setup.sh
